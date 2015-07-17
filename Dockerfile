@@ -5,6 +5,8 @@ MAINTAINER Kevin Rojczyk <kevin.roj@p8h.de>
 ADD janus.plugin.streaming.cfg /opt/janus/etc/janus/janus.plugin.streaming.cfg
 
 EXPOSE 8088
+EXPOSE 8188
+#websocket
 EXPOSE 7088 
 #admin website
 VOLUME /media
