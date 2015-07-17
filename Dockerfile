@@ -15,6 +15,13 @@ RUN git clone https://github.com/meetecho/janus-gateway.git && \
     make install && \
     make configs
     
+RUN git clone git://git.libwebsockets.org/libwebsockets && \
+    cd libwebsockets && \
+    mkdir build && \
+    cd build && \
+    cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .. && \
+    make && sudo make install
+    
     
     
 # CMD /opt/janus/bin/janus
