@@ -4,6 +4,7 @@ MAINTAINER Kevin Rojczyk <kevin.roj@p8h.de>
 
 EXPOSE 8088
 EXPOSE 7088 #admin website
+VOLUME /media
     
     
 CMD /opt/janus/bin/janus
