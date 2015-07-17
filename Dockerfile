@@ -7,20 +7,22 @@ RUN apt-get -q update && \
     libopus-dev libogg-dev libini-config-dev libcollection-dev \
     pkg-config gengetopt libtool automake git
     
-RUN git clone https://github.com/meetecho/janus-gateway.git && \
-    cd janus-gateway && \
-    sh autogen.sh && \
-    ./configure --prefix=/opt/janus --disable-docs --disable-websockets --disable-data-channels --disable-rabbitmq && \
-    make && \
-    make install && \
-    make configs
-    
 RUN git clone git://git.libwebsockets.org/libwebsockets && \
     cd libwebsockets && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .. && \
     make && sudo make install
+    
+RUN git clone https://github.com/meetecho/janus-gateway.git && \
+    cd janus-gateway && \
+    sh autogen.sh && \
+    ./configure --prefix=/opt/janus --disable-docs --disable-data-channels --disable-rabbitmq && \
+    make && \
+    make install && \
+    make configs
+    
+
     
     
     
