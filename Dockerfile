@@ -1,21 +1,10 @@
-FROM library/debian:stable
+FROM k3v0r/janus-gateway:cache #use temporary the cache, for faster building
 MAINTAINER Kevin Rojczyk <kevin.roj@p8h.de>
 
-RUN apt-get -q update && \
-    apt-get -y -q install build-essential libmicrohttpd-dev libjansson-dev libnice-dev \
-    libssl-dev libsrtp-dev libsofia-sip-ua-dev libglib2.0-dev \
-    libopus-dev libogg-dev libini-config-dev libcollection-dev \
-    pkg-config gengetopt libtool automake git
-    
-RUN git clone https://github.com/meetecho/janus-gateway.git && \
-    cd janus-gateway && \
-    sh autogen.sh && \
-    ./configure --prefix=/opt/janus --disable-docs --disable-websockets --disable-data-channels --disable-rabbitmq && \
-    make && \
-    make install && \
-    make configs
+
+EXPORT 8088
+EXPORT 7088 #admin website
     
     
-    
-# CMD /opt/janus/bin/janus
+CMD /opt/janus/bin/janus
 
