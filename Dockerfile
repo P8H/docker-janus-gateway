@@ -2,7 +2,7 @@ FROM library/debian:stable
 MAINTAINER Kevin Rojczyk <kevin.roj@p8h.de>
 
 RUN apt-get -q update && \
-    apt-get -y -q install build-essential libmicrohttpd-dev libjansson-dev libnice-dev \
+    apt-get -y -q install build-essential cmake libmicrohttpd-dev libjansson-dev libnice-dev \
     libssl-dev libsrtp-dev libsofia-sip-ua-dev libglib2.0-dev \
     libopus-dev libogg-dev libini-config-dev libcollection-dev \
     pkg-config gengetopt libtool automake git
