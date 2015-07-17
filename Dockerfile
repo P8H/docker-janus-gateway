@@ -12,7 +12,7 @@ RUN git clone git://git.libwebsockets.org/libwebsockets && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .. && \
-    make && sudo make install
+    make && make install
     
 RUN git clone https://github.com/meetecho/janus-gateway.git && \
     cd janus-gateway && \
