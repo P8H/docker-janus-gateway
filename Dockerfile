@@ -3,6 +3,7 @@ FROM k3v0r/janus-gateway:cache
 MAINTAINER Kevin Rojczyk <kevin.roj@p8h.de>
 
 ADD janus.plugin.streaming.cfg /opt/janus/etc/janus/janus.plugin.streaming.cfg
+ADD janus.cfg /opt/janus/etc/janus/janus.cfg
 
 EXPOSE 8088
 EXPOSE 8188
