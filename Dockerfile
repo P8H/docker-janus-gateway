@@ -14,5 +14,5 @@ VOLUME /media
 
 
     
-CMD /opt/janus/bin/janus
+#CMD /opt/janus/bin/janus
 
