@@ -5,6 +5,7 @@ MAINTAINER Kevin Rojczyk <kevin.roj@p8h.de>
 ADD janus.plugin.streaming.cfg /opt/janus/etc/janus/janus.plugin.streaming.cfg
 ADD janus.cfg /opt/janus/etc/janus/janus.cfg
 
+EXPOSE 8000
 EXPOSE 8088
 EXPOSE 8188
 #websocket
@@ -14,5 +15,5 @@ VOLUME /media
 
 
     
-#CMD /opt/janus/bin/janus
+#CMD /opt/janus/bin/janus & cd /opt/janus/share/janus/demo && python -m SimpleHTTPServer
 
