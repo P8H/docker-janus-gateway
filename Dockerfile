@@ -5,7 +5,7 @@ RUN apt-get -q update && \
     apt-get -y -q install build-essential cmake libmicrohttpd-dev libjansson-dev libnice-dev \
     libssl-dev libsrtp-dev libsofia-sip-ua-dev libglib2.0-dev \
     libopus-dev libogg-dev libini-config-dev libcollection-dev \
-    pkg-config gengetopt libtool automake git
+    pkg-config gengetopt libtool automake git curl libcurl4-openssl-dev openssl
     
 RUN git clone git://git.libwebsockets.org/libwebsockets && \
     cd libwebsockets && \
